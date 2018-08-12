@@ -49,7 +49,7 @@ func Test_decodingXML_HolidayServiceWSDL_Should_Be_Formatted_In_Struct(t *testin
 
 }
 
-func Test_encodingXML_HolidayServiceWSDL_Should_Be_Formatted_In_XML(t *testing.T) {
+func Test_encodingXML_GetHolidaysAvailableResponse_Should_Be_Formatted_In_XML(t *testing.T) {
 	GetHolidaysAvailableResponse := GetHolidaysAvailableResponse{
 		GetHolidaysAvailableResult: &GetHolidaysAvailableResult{
 			HolidayCode: &[]HolidayCode{
