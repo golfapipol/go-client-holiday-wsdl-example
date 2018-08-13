@@ -2,7 +2,7 @@ package api_test
 
 import (
 	"encoding/xml"
-	. "holiday/api"
+	. "holiday"
 	"testing"
 )
 

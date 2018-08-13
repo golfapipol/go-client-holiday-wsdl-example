@@ -3,6 +3,7 @@ package api_test
 import (
 	"bytes"
 	"encoding/json"
+	. "holiday"
 	. "holiday/api"
 	"net/http/httptest"
 	"testing"
@@ -14,7 +15,7 @@ func Test_GetHolidaysAvailableHandler_Input_UnitedStates_Should_Be_34_days(t *te
 	expectedHolidays := 34
 	var actualHolidayResponse HolidayResponse
 	requestData := []byte(`{"countryCode":"UnitedStates"}`)
-	request := httptest.NewRequest("POST", "/api/v1/holidays/", bytes.NewBuffer(requestData))
+	request := httptest.NewRequest("POST", "/api/v1/holidays", bytes.NewBuffer(requestData))
 	request.Header.Set(echo.HeaderContentType, echo.MIMEApplicationJSON)
 	recorder := httptest.NewRecorder()
 	route := SetupRoute()

@@ -3,7 +3,7 @@ package api_test
 import (
 	"bytes"
 	"encoding/xml"
-	. "holiday/api"
+	. "holiday"
 	"io/ioutil"
 	"net/http"
 	"testing"
