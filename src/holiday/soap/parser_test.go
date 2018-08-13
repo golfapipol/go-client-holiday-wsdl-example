@@ -1,12 +1,12 @@
 package soap_test
 
 import (
-	"holiday/api"
+	. "holiday"
 	"testing"
 )
 
 func Test_HolidayRequestToXML_Should_Be_GetHolidaysAvailable(t *testing.T) {
-	holidayResponse := api.HolidayRequest{
+	holidayResponse := HolidayRequest{
 		CountryCode: "UnitedStates",
 	}
 	expectedXML := `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hs="http://www.holidaywebservice.com/HolidayService_v2/"><soapenv:Body><hs:GetHolidaysAvailable><hs:countryCode>UnitedStates</hs:countryCode></hs:GetHolidaysAvailable></soapenv:Body></soapenv:Envelope>`

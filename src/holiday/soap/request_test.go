@@ -1,14 +1,14 @@
 package soap_test
 
 import (
-	"holiday/api"
+	. "holiday"
 	. "holiday/soap"
 	"testing"
 )
 
 func Test_RequestToWDSL_Input_HolidayRequest_Should_Be_Envelope_With_GetHolidaysAvailableResponse(t *testing.T) {
 	expectedHolidays := 34
-	holidayRequest := api.HolidayRequest{
+	holidayRequest := HolidayRequest{
 		CountryCode: "UnitedStates",
 	}
 	actualHolidayResponse := RequestToWDSL(holidayRequest)
