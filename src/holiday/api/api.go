@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	. "holiday"
 	"holiday/soap"
 	"net/http"
@@ -20,7 +19,6 @@ func GetHolidaysAvailableHandler(context echo.Context) error {
 	if err := context.Bind(holidayRequest); err != nil {
 		return err
 	}
-	fmt.Println(holidayRequest)
 	holidayResponse := soap.RequestToWDSL(*holidayRequest)
 	return context.JSON(http.StatusOK, holidayResponse)
 }

@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "7191367f-b2fb-462d-91f4-70d29fb7717b",
+		"name": "webservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://www.holidaywebservice.com/HolidayService_v2/HolidayService2.asmx?wsdl",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:hs=\"http://www.holidaywebservice.com/HolidayService_v2/\">\n\t<soapenv:Body>\n\t\t<hs:GetHolidaysAvailable>\n\t\t\t<hs:countryCode>UnitedStates</hs:countryCode>\n\t\t</hs:GetHolidaysAvailable>\n\t</soapenv:Body>\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "http://www.holidaywebservice.com/HolidayService_v2/HolidayService2.asmx?wsdl",
+					"protocol": "http",
+					"host": [
+						"www",
+						"holidaywebservice",
+						"com"
+					],
+					"path": [
+						"HolidayService_v2",
+						"HolidayService2.asmx"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/holidays",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"countryCode\":\"UnitedStates\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/holidays",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"holidays"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
