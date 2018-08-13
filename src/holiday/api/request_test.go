@@ -1,8 +1,8 @@
-package holiday_test
+package api_test
 
 import (
 	"encoding/xml"
-	. "holiday"
+	. "holiday/api"
 	"testing"
 )
 

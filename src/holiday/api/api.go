@@ -3,7 +3,6 @@ package api
 import (
 	"encoding/xml"
 	"fmt"
-	"holiday"
 	"net/http"
 
 	"github.com/labstack/echo"
@@ -37,7 +36,7 @@ func GetHolidaysAvailableHandler(context echo.Context) error {
 }
 
 func (request HolidayRequest) ToXML() string {
-	getHolidaysAvailable := holiday.GetHolidaysAvailable{
+	getHolidaysAvailable := GetHolidaysAvailable{
 		CountryCode: request.CountryCode,
 	}
 	xmlData, _ := xml.Marshal(getHolidaysAvailable)

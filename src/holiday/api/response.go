@@ -1,6 +1,8 @@
-package holiday
+package api
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+)
 
 type Envelope struct {
 	XMLName xml.Name `xml:"http://schemas.xmlsoap.org/soap/envelope/ Envelope"`
@@ -20,4 +22,21 @@ type GetHolidaysAvailableResult struct {
 type HolidayCode struct {
 	Code        string `xml:"Code"`
 	Description string `xml:"Description"`
+}
+
+func (response GetHolidaysAvailableResponse) ToJSON() HolidayResponse {
+	holidays := make([]Holiday, len(*response.GetHolidaysAvailableResult.HolidayCode))
+	for index := range holidays {
+		holidays[index] = (*response.GetHolidaysAvailableResult.HolidayCode)[index].ToJSON()
+	}
+	return HolidayResponse{
+		Holiday: holidays,
+	}
+}
+
+func (hc HolidayCode) ToJSON() Holiday {
+	return Holiday{
+		Code:        hc.Code,
+		Description: hc.Description,
+	}
 }

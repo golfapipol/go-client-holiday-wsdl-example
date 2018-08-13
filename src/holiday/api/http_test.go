@@ -1,9 +1,9 @@
-package holiday_test
+package api_test
 
 import (
 	"bytes"
 	"encoding/xml"
-	. "holiday"
+	. "holiday/api"
 	"io/ioutil"
 	"net/http"
 	"testing"
